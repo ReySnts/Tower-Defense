@@ -1,15 +1,10 @@
 using Health;
+using Projectile;
 
 namespace Patterns.ChainOfResponsibility
 {
-    public class HandlerDamageVital : AbstractHandler<HealthEnemy, int>
+    public sealed class HandlerDamageVital : AbstractHandler<AbstractProjectile, HealthEnemy>
     {
-        public HandlerDamageVital(HealthEnemy healthEnemy) : base(healthEnemy) { }
-
-        public override void Handle(int damage)
-        {
-            if (request.ScriptableObjectHealthEnemy.Vital <= 0) nextHandler.Handle(damage);
-            else request.Receive(damage);
-        }
+        public override void Handle(AbstractProjectile projectile, HealthEnemy healthEnemy) => healthEnemy.Receive(damage: projectile.ScriptableObjectDamageProjectile.DamageToVital);
     }
 }

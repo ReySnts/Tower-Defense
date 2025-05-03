@@ -7,10 +7,10 @@ namespace ScriptableObject
 
     public sealed class ScriptableObjectHealthEnemy : UnityEngine.ScriptableObject
     {
-        [field: SerializeField, Space(height: 10f)] public int Armor { get; set; }
+        [field: SerializeField, Space(height: 10f)] public int PointArmor { get; set; }
 
-        [field: SerializeField, Space(height: 10f)] public int Health { get; set; }
+        [field: SerializeField, Space(height: 10f)] public int PointHealth { get; set; }
 
-        [field: SerializeField, Space(height: 10f)] public int Vital { get; set; }
+        [field: SerializeField, Space(height: 10f)] public int PointVital { get; set; }
     }
 }

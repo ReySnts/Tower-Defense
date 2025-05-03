@@ -1,16 +1,17 @@
 using Health;
+using Projectile;
 
 namespace Patterns.ChainOfResponsibility
 {
-    public class HandlerDamageHealth : AbstractHandler<HealthEnemy, int>
+    public sealed class HandlerDamageHealth : AbstractHandler<AbstractProjectile, HealthEnemy>
     {
-        public HandlerDamageHealth(HealthEnemy healthEnemy) : base(healthEnemy) { }
-
-        public override void Handle(int damage)
+        public override void Handle(AbstractProjectile projectile, HealthEnemy healthEnemy)
         {
-            var scriptableObjectHealthEnemy = request.ScriptableObjectHealthEnemy;
-            if (scriptableObjectHealthEnemy.Health <= 0) nextHandler.Handle(damage);
-            else scriptableObjectHealthEnemy.Health -= damage;
+            var scriptableObjectHealthEnemy = healthEnemy.ScriptableObjectHealthEnemy;
+            var scriptableObjectDamageProjectile = projectile.ScriptableObjectDamageProjectile;
+            var scriptableObjectHealthEnemyPointHealth = scriptableObjectHealthEnemy.PointHealth;
+            if (scriptableObjectHealthEnemyPointHealth > 0) scriptableObjectHealthEnemy.PointHealth -= scriptableObjectDamageProjectile.DamageToHealth;
+            else base.Handle(request: projectile, handle: healthEnemy);
         }
     }
 }

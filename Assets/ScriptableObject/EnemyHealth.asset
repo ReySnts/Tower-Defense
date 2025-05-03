@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab2fe54e590cfb419086c0147b30455, type: 3}
   m_Name: EnemyHealth
   m_EditorClassIdentifier: 
-  <Armor>k__BackingField: 40
-  <Health>k__BackingField: 1000
-  <Vital>k__BackingField: 50
+  <PointArmor>k__BackingField: 120
+  <PointHealth>k__BackingField: 120
+  <PointVital>k__BackingField: 120
