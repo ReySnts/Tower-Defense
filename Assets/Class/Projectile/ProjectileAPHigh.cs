@@ -1,14 +1,19 @@
 using Health;
 using Patterns.ChainOfResponsibility;
+using UnityEngine;
 
 namespace Projectile
 {
     public sealed class ProjectileAPHigh : AbstractProjectile
     {
+        [SerializeField] private AbstractHandler<AbstractProjectile, HealthEnemy> handlerDamageHealth;
+
+        [SerializeField] private AbstractHandler<AbstractProjectile, HealthEnemy> handlerDamageVital;
+
         public override void DealDamage(HealthEnemy healthEnemy)
         {
-            var damageHandler = new HandlerDamageHealth(healthEnemy).Chain(new HandlerDamageVital(healthEnemy));
-            damageHandler.Handle(damage);
+            handlerDamageHealth.Chain(handlerNext: handlerDamageVital);
+            handlerDamageHealth.Handle(request: this, handle: healthEnemy);
         }
     }
 }

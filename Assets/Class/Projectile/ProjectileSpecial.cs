@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using Health;
+using Patterns.ChainOfResponsibility;
 using UnityEngine;
 
-public class ProjectileSpecial : MonoBehaviour
+namespace Projectile
 {
-    // Start is called before the first frame update
-    void Start()
+    public sealed class ProjectileSpecial : AbstractProjectile
     {
-        
-    }
+        [SerializeField] private AbstractHandler<AbstractProjectile, HealthEnemy> handlerDamageArmor;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [SerializeField] private AbstractHandler<AbstractProjectile, HealthEnemy> handlerDamageVital;
+
+        public override void DealDamage(HealthEnemy healthEnemy)
+        {
+            handlerDamageArmor.Chain(handlerNext: handlerDamageVital);
+            handlerDamageArmor.Handle(request: this, handle: healthEnemy);
+        }
     }
 }

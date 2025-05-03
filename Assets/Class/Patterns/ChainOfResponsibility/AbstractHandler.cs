@@ -1,21 +1,17 @@
+using UnityEngine;
+
 namespace Patterns.ChainOfResponsibility
 {
-    public abstract class AbstractHandler<TRequest, THandle>
+    public abstract class AbstractHandler<TRequest, THandle> : MonoBehaviour
     {
-        protected TRequest request;
+        protected AbstractHandler<TRequest, THandle> handlerNext;
 
-        protected AbstractHandler<TRequest, THandle> nextHandler;
-
-        public AbstractHandler(TRequest request) => this.request = request;
-
-        public AbstractHandler<TRequest, THandle> Chain(AbstractHandler<TRequest, THandle> newHandler)
+        public AbstractHandler<TRequest, THandle> Chain(AbstractHandler<TRequest, THandle> handlerNext)
         {
-            var lastHandler = this;
-            while (lastHandler.nextHandler != null) lastHandler = lastHandler.nextHandler;
-            lastHandler.nextHandler = newHandler;
-            return this;
+            this.handlerNext = handlerNext;
+            return handlerNext;
         }
 
-        public abstract void Handle(THandle handle);
+        public virtual void Handle(TRequest request, THandle handle) => handlerNext?.Handle(request, handle);
     }
 }
