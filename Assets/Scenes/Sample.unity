@@ -1158,7 +1158,7 @@ PrefabInstance:
     - target: {fileID: 258400320275234170, guid: 9af60cf7e976b3644a869e2d553957f8, type: 3}
       propertyPath: parent
       value: 
-      objectReference: {fileID: 1541944892}
+      objectReference: {fileID: 0}
     - target: {fileID: 258400320275234170, guid: 9af60cf7e976b3644a869e2d553957f8, type: 3}
       propertyPath: original
       value: 
@@ -1446,7 +1446,7 @@ PrefabInstance:
     - target: {fileID: 258400320275234170, guid: 9af60cf7e976b3644a869e2d553957f8, type: 3}
       propertyPath: parent
       value: 
-      objectReference: {fileID: 1541944892}
+      objectReference: {fileID: 0}
     - target: {fileID: 258400320275234170, guid: 9af60cf7e976b3644a869e2d553957f8, type: 3}
       propertyPath: original
       value: 
@@ -1554,8 +1554,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1885576523}
-  - component: {fileID: 1885576524}
   - component: {fileID: 1885576525}
+  - component: {fileID: 1885576524}
   m_Layer: 0
   m_Name: GridButtonProjectile
   m_TagString: Untagged
@@ -1582,36 +1582,10 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: 135}
+  m_AnchoredPosition: {x: -118, y: -200}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885576524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885576522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 20
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
---- !u!114 &1885576525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1625,6 +1599,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &1885576525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885576522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 30
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1910416838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,7 +1662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 235.00003, y: 185.00002}
+  m_AnchoredPosition: {x: 310, y: -200}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1910416840
@@ -1781,7 +1781,7 @@ PrefabInstance:
     - target: {fileID: 258400320275234170, guid: 9af60cf7e976b3644a869e2d553957f8, type: 3}
       propertyPath: parent
       value: 
-      objectReference: {fileID: 1541944892}
+      objectReference: {fileID: 0}
     - target: {fileID: 258400320275234170, guid: 9af60cf7e976b3644a869e2d553957f8, type: 3}
       propertyPath: original
       value: 

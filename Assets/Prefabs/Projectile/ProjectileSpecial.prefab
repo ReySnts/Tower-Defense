@@ -16,6 +16,10 @@ GameObject:
   - component: {fileID: 6154898076751408024}
   - component: {fileID: 8698822663097089368}
   - component: {fileID: 8808231701115863820}
+  - component: {fileID: 4854318776585064899}
+  - component: {fileID: -1390434270686761595}
+  - component: {fileID: -4065157073029855703}
+  - component: {fileID: 7229373430569969144}
   m_Layer: 0
   m_Name: ProjectileSpecial
   m_TagString: Projectile
@@ -31,13 +35,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8628233096829830420}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -3, y: 0, z: -5}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -3, y: -0.5, z: -5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &290549372860821421
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -151,7 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ScriptableObjectDamageProjectile>k__BackingField: {fileID: 11400000, guid: 0abecb303caebc948995503f4ecf75d8, type: 2}
-  speed: 100
   handlerDamageArmor: {fileID: 8698822663097089368}
   handlerDamageVital: {fileID: 8808231701115863820}
 --- !u!114 &8698822663097089368
@@ -178,3 +181,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3249072dc8597ca4ebfdd7d36a7099f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4854318776585064899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8628233096829830420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847b2f9d0be4b2b4c97b655fa2060f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateCurrent: {fileID: -1390434270686761595}
+--- !u!114 &-1390434270686761595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8628233096829830420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ee86c9a16ae11458e3cd0289d77863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateProjectileRotate: {fileID: -4065157073029855703}
+  speed: 100
+--- !u!114 &-4065157073029855703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8628233096829830420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88bb36d98836cb4a9a1fe120233193d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateProjectileFollow: {fileID: 7229373430569969144}
+  target: {fileID: 0}
+--- !u!114 &7229373430569969144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8628233096829830420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd4517bf8cb9314489129ec8397d5a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  maxDistanceDelta: 10
